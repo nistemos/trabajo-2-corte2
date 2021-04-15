@@ -35,5 +35,10 @@ router.post('/crearusuario', Grill_01.CGrill01);
 router.get('/eliminar/:id', Grill_01.DGrill01);
 router.post('/modificar/:id_mod', Grill_01.UGrill01);
 
+router.get('/api/listarusuario', Grill_01.JsonRGrill01);
+router.post('/api/crearusuario', Grill_01.JsonCGrill01);
+router.delete('/api/eliminar/:id', Grill_01.JsonDGrill01);
+router.put('/api/modificar/:id_mod', Grill_01.JsonUGrill01);
+
 //----------------------------------------------------------
 module.exports = router;
