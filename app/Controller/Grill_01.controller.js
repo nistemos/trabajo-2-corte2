@@ -1,17 +1,14 @@
 const ModelGrill01 = require('../Model/grill_01.model');
 
 async function CGrill01(req, res) {
-    /*const AllAllumnos = await ModelGrill01().create();
-    console.log(AllAllumnos);
-    console.log('Hola mundo');
-    res.render('../app/View/links/listarusuario',{AllAllumnos});*/
+    //await ModelGrill01().create(req.body);
 }
 async function JsonCGrill01(req, res) {
-    const AllAlumnos = await ModelGrill01().create();
-    res.status(200).json(AllAlumnos);
+    
 }
 async function RGrill01(req, res) {
     const AllAlumnos = await ModelGrill01().read();
+    console.log(AllAlumnos);
     res.render('../app/View/links/listarusuario',{AllAlumnos});
 }
 async function JsonRGrill01(req, res) {

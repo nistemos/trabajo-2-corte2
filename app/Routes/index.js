@@ -31,5 +31,7 @@ router.get('/registro', (req,res)=>{
 //----------------------------------------------------------
 //controladores --------------------------------------------
 router.get('/listarusuario', Grill_01.RGrill01);
+//router.post('/crearusuario', Grill_01.CGrill01)
+
 //----------------------------------------------------------
 module.exports = router;
