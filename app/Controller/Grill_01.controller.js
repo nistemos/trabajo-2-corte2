@@ -1,14 +1,14 @@
 const ModelGrill01 = require('../Model/grill_01.model');
 
 async function CGrill01(req, res) {
-    //await ModelGrill01().create(req.body);
+    await ModelGrill01().create(req.body);
+    res.redirect('/listarusuario');
 }
 async function JsonCGrill01(req, res) {
     
 }
 async function RGrill01(req, res) {
     const AllAlumnos = await ModelGrill01().read();
-    console.log(AllAlumnos);
     res.render('../app/View/links/listarusuario',{AllAlumnos});
 }
 async function JsonRGrill01(req, res) {
@@ -16,7 +16,8 @@ async function JsonRGrill01(req, res) {
     res.status(200).json(AllAlumnos);
 }
 async function UGrill01(req, res) {
-    
+    await ModelGrill01().update(req.params.id);
+    res.redirect('/listarusuario');
 }
 async function JsonUGrill01(req, res) {
     const AllAlumnos = await ModelGrill01().create();
@@ -24,7 +25,9 @@ async function JsonUGrill01(req, res) {
     res.render('../app/View/links/listarusuario',{AllAlumnos});
 }
 async function DGrill01(req, res) {
-    
+    let id = req.params.id;
+    await ModelGrill01().delet(req.params.id);
+    res.redirect('/listarusuario');
 }
 async function JsonDGrill01(req, res) {
     const AllAlumnos = await ModelGrill01().create();
