@@ -64,19 +64,101 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
-                    ¿Estas seguro que deseas eliminar a {{Usuarionombre}}?
+                  <div class="modal-body ">
+                    <form class="needs-validation " action="crearusuario" method="POST" novalidate>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustom01">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuarionombre" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustom01">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuarioapellido" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustom01">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuariosemestre" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Enviar</button>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="/eliminar/{{idUsuario}}" class="btn btn-primary" >Eliminar</a>
+                    <a href="/eliminar/{{idUsuario}}" class="btn btn-primary" >modificar</a>
                   </div>
                 </div>
               </div>
-            </div>
-            
+            </div>           
           </td>
-          <td><a href="/modificar/{{idUsuario}}">Modificar</a></td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modificar{{idUsuario}}">
+              Modificar
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modificar{{idUsuario}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <form class="needs-validation " action="modificar/{{idUsuario}}" method="POST" novalidate>
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Modificar</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                      <div class="modal-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuarionombre" value="{{Usuarionombre}}" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="cform-group">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuarioapellido" value="{{Usuarioapellido}}" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="Usuariosemestre" value="{{Usuariosemestre}}" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                        </div>                      
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" >modificar</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </td>
         </tr>
       {{/each}}
     </tbody>

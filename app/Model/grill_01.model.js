@@ -11,7 +11,8 @@ module.exports = function () {
         return await pool.query(query);
     }
     async function update(data){
-        let query = "select * from Usuario";
+        let query = 'update Usuario set Usuarionombre = ?, Usuarioapellido = ?, Usuariosemestre = ? where idUsuario = ?';
+        return await pool.query(query, data);
     }
     async function delet(data){
        let query = "delete from Usuario where idUsuario = ?";
