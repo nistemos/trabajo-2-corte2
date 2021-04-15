@@ -8,6 +8,7 @@ module.exports = function () {
     }
     async function read(){
         let query = "CALL ListarUsuarios()";
+        return await pool.query(query);
     }
     async function update(){
         let query = "CALL ListarUsuarios()";
