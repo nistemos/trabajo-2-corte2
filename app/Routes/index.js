@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Grill_01 = require('../Controller/Grill_01.controller');
+const quiz = require('../Controller/quizcortedos.controller');
 //vistas---------------------------------------------------
 router.get('/', (req,res)=>{
     res.render('../app/View/links/inicio',{
@@ -30,6 +31,12 @@ router.get('/registro', (req,res)=>{
 });
 //----------------------------------------------------------
 //controladores --------------------------------------------
+
+router.get('/QuizCortedos/:id', quiz.listarUsuario);
+router.post('/comentar', quiz.crearComentario);
+router.post('/like/:id', quiz.crearLike);
+
+
 router.get('/listarusuario', Grill_01.RGrill01);
 router.post('/crearusuario', Grill_01.CGrill01);
 router.get('/eliminar/:id', Grill_01.DGrill01);

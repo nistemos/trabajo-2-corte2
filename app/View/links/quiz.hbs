@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <form action="/comentar" method="POST"></form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Comentario: </label>
+                    <textarea name="comentario" id="" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">comentar</button>
+            </form>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fondos-pantalla-full-hd-animales_5.jpg?itok=2ibV9TJy" alt="Card image cap">
+            {{#each data}}
+                <div class="card-body">
+                    <h4>{{nombre}}</h4>
+                    <p class="card-text">{{comentario}}</p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary active">
+                        me gusta
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Compartir
+                    </button>
+                </div>
+            {{/each}}
+            
+        </div>
+    </div>
+</div>
