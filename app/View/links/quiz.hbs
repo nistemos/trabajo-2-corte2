@@ -1,12 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="card" style="width: 18rem;">
-            <form action="/comentar" method="POST"></form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Comentario: </label>
-                    <textarea name="comentario" id="" cols="30" rows="10"></textarea>
+            <form class="needs-validation" action="/comentar/2" method="POST" novalidate>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">First name</label>
+                        <label for="validationCustom01">Comentario: </label>
+                        <textarea name="comentario" id="" cols="30" rows="10"></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">comentar</button>
+                <button class="btn btn-primary" type="submit">Enviar</button>
             </form>
         </div>
         <div class="card" style="width: 18rem;">
@@ -25,7 +31,6 @@
                     </button>
                 </div>
             {{/each}}
-            
         </div>
     </div>
 </div>
